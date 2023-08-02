@@ -1,0 +1,6 @@
+Users     Group     Password
+Abdullahi Manager    12345
+Akinyemi  Delivery   goody@123
+Adeboy    Delivery   goody@123
+Asamu     User       goody@123
+Bolaji    User       12345

@@ -1,0 +1,19 @@
+- \l or \list: List all databases available on the PostgreSQL server.
+
+- \c or \connect: Connect to a specific database. For example, \c my_database connects to the database named "my_database."
+
+- \dt or \dt+: List all relations (tables, views, sequences, etc.) in the current database. \dt+ provides more detailed information.
+
+- \du or \du+: List all roles (users) in the PostgreSQL server. \du+ provides more detailed information.
+
+- \d [table_name] or \d+ [table_name]: Describe a specific table or relation. \d provides basic information, while \d+ provides more detailed information.
+
+- \timing: Toggle timing on or off. When timing is on, PostgreSQL will display the execution time of queries.
+
+- \i [file_path]: Execute SQL commands from a specific file. For example, \i my_script.sql executes SQL commands from the file "my_script.sql."
+
+- \e or \edit: Open the default editor to write and execute SQL commands. After saving and exiting the editor, the commands will be executed in psql.
+
+- \x: Toggle expanded output. When expanded output is on, the results of queries will be displayed in a more readable format.
+
+- \q: Quit the psql session and exit the PostgreSQL interactive terminal.
