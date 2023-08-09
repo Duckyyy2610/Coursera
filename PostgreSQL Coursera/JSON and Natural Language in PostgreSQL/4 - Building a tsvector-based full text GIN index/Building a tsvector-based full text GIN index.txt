@@ -1,0 +1,25 @@
+psql -h pg.pg4e.com -p 5432 -U pg4e_81a1a98acd pg4e_81a1a98acd
+
+password: pg4e_p_780c7aadcef4f23
+
+DROP TABLE IF EXISTS docs03;
+CREATE TABLE docs03 (id SERIAL, doc TEXT, PRIMARY KEY(id));
+CREATE INDEX array03 ON docs03 USING gin(to_tsvector('english', doc));
+
+INSERT INTO docs03 (doc) VALUES
+('The Python interpreter is written in a highlevel language called C'),
+('You can look at the actual source code for the Python interpreter by'),
+('source code So Python is a program itself and it is compiled into'),
+('machine code When you installed Python on your computer or the vendor'),
+('installed it you copied a machinecode copy of the translated Python'),
+('program onto your system In Windows the executable machine code for'),
+('Python itself is likely in a file with a name like'),
+('That is more than you really need to know to be a Python programmer but'),
+('sometimes it pays to answer those little nagging questions right at the'),
+('Typing commands into the Python interpreter is a great way to experiment');
+
+INSERT INTO docs03 (doc) SELECT 'Neon ' || generate_series(10000,20000);
+
+
+SELECT id, doc FROM docs03 WHERE to_tsquery('english', 'interpreter') @@ to_tsvector('english', doc);
+EXPLAIN SELECT id, doc FROM docs03 WHERE to_tsquery('english', 'interpreter') @@ to_tsvector('english', doc);
