@@ -1,0 +1,5 @@
+type python what exactly is happening
+The Python interpreter is written in a highlevel language called C
+You can look at the actual source code for the Python interpreter by
+source code So Python is a program itself and it is compiled into
+machine code When you installed Python on your computer or the vendor
